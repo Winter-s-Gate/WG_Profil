@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Winter's Gates RP</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	<!-- 🎬 Intro animée -->
+		<div id="intro">
+			<img id="imgBlue" src="assets/img/bg1.png">
+			<img id="imgRed" src="assets/img/bg2.png">
+			<img id="imgFusion" src="assets/img/bg.png">
+			<div id="introContent">
+				<audio id="introSound" src="assets/sound/entrance.mp3"></audio>
+				<img src="assets/img/wgcitylogo.png" id="Citylogo">
+				<h2>Welcome 
+				To 
+				Winter's Gate</h2>
+				<button onclick="enterRP()">Enter</button>
+			</div>
+		</div>
+
+	<script src="script.js"></script>
+	<script>
+		function enterRP() {
+		const name = localStorage.getItem("rp_name");
+			if (name) {
+				window.location.href = "profile.html"; // profil déjà rempli
+			} else {
+				window.location.href = "form.html"; // créer un nouveau profil
+			}
+		}
+	</script>
+</body>
+</html>

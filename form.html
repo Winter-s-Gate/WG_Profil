@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RP Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="rp-form">
+    <h2>Profil RP</h2>
+
+    <!-- 🧍 Identité -->
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="gender" placeholder="Gender">
+    <input type="text" id="dob" placeholder="Date of Birth">
+    <input type="text" id="height" placeholder="Height">
+    <input type="text" id="weight" placeholder="Weight">
+
+    <!-- 🎓 Académique -->
+    <input type="text" id="major" placeholder="Academic Major">
+
+    <!-- 🏅 Activités -->
+    <div class="rp-frame">
+      <h3>Activities</h3>
+      <label><input type="checkbox" name="activity" value="Football"> 🏈 Football</label>
+      <label><input type="checkbox" name="activity" value="Basketball"> 🏀 Basketball</label>
+      <label><input type="checkbox" name="activity" value="Swim Team"> 🏊 Swim Team</label>
+      <label><input type="checkbox" name="activity" value="Cheerleader"> 📣 Cheerleader</label>
+      <label><input type="checkbox" name="activity" value="Tennis"> 🎾 Tennis</label>
+    </div>
+
+    <!-- 🏛️ Maison Greek -->
+    <select id="greek">
+      <option value="" disabled selected>Select Greek House</option>
+      <option value="None">None</option>
+      <option value="abg">ABG</option>
+      <option value="acd">ACD</option>
+      <option value="kop">KOP</option>
+      <option value="osr">OSR</option>
+      <option value="pes">PES</option>
+      <option value="pkv">PKV</option>
+    </select>
+
+    <!-- 🎭 Rôle -->
+    <select id="role">
+      <option value="" disabled selected>Select Role</option>
+      <option value="Student">Student</option>
+      <option value="Teacher">Teacher</option>
+      <option value="Coach">Coach</option>
+      <option value="Staff">Staff</option>
+      <option value="Visitor">Visitor</option>
+    </select>
+
+    <!-- 🏠 Résidence -->
+    <input type="text" id="address" placeholder="Resident Address">
+    <input type="text" id="job" placeholder="Resident Job">
+
+    <!-- 📖 Histoire RP -->
+    <textarea id="story" placeholder="RP Story..."></textarea>
+
+    <!-- 📤 Bouton d’envoi -->
+    <button onclick="sendToDiscord()">Send</button>
+  </div>
+
+  <!-- 🔙 Bouton retour -->
+  <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
+
+</body>
+</html>

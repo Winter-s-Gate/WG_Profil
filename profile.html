@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RP Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="rp-profile">
+    <h2 id="nameField">Nom du personnage</h2>
+
+    <!-- 🧍 Identité -->
+    <div class="rp-frame">
+      <h3>Identity</h3>
+      <p><strong>Gender :</strong> <span id="genderField">...</span></p>
+      <p><strong>DoB :</strong> <span id="dobField">...</span></p>
+      <p><strong>Height :</strong> <span id="heightField">...</span></p>
+      <p><strong>Weight :</strong> <span id="weightField">...</span></p>
+    </div>
+
+    <!-- 🎓 Académique -->
+    <div class="rp-frame">
+      <h3>Academic</h3>
+      <p><strong>Major:</strong> <span id="majorField">...</span></p>
+      <p><strong>Greek House:</strong> <span id="greekField">...</span>
+        <img id="greekLogo" src="" alt="Greek House Logo" style="max-height: 40px; vertical-align: middle; margin-left: 10px; display: none;">
+      </p>
+    </div>
+
+    <!-- 📖 Histoire -->
+    <div class="rp-frame">
+      <h3>Storyline</h3>
+      <p id="storyField">...</p>
+    </div>
+
+    <!-- 📤 Boutons -->
+    <div class="rp-buttons">
+      <button onclick="window.location.href='form.html'">📝 edit</button>
+      <button onclick="sendToDiscord()">📤 send</button>
+      <button class="back-button" onclick="window.location.href='index.html'">← back</button>
+    </div>
+  </div>
+
+  <script>
+    // 🔄 Chargement des données depuis localStorage
+    const fields = {
+      nameField: "rp_name",
+      genderField: "rp_gender",
+      dobField: "rp_dob",
+      heightField: "rp_height",
+      weightField: "rp_weight",
+      majorField: "rp_major",
+      greekField: "rp_greek",
+      storyField: "rp_story"
+    };
+
+    for (const [id, key] of Object.entries(fields)) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = localStorage.getItem(key) || "...";
+    }
+
+    // 🏛️ Logo de la maison Greek
+    const greek = localStorage.getItem("rp_greek");
+    const logoMap = {
+      abg: "assets/logos/abg.png",
+      acd: "assets/logos/acd.png",
+      kop: "assets/logos/kop.png",
+      osr: "assets/logos/osr.png",
+      pes: "assets/logos/pes.png",
+      pkv: "assets/logos/pkv.png"
+    };
+
+    if (greek && logoMap[greek.toLowerCase()]) {
+      const logo = document.getElementById("greekLogo");
+      logo.src = logoMap[greek.toLowerCase()];
+      logo.style.display = "inline-block";
+    }
+  </script>
+
+</body>
+</html>
