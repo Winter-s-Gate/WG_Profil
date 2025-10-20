@@ -75,7 +75,7 @@ function sendToDiscord() {
   }
 
   // 📤 Webhook Discord avec embed stylisé
-  const webhookURL = "https://discord.com/api/webhooks/1424832477956018247/uMdgmPBJCIBlTxO6lCtAbm2pPemQcDEJstug2Nb77gDT9ZeErah0B1zrCeEOnADU8etp";
+  const webhookURL = "https://discord.com/api/webhooks/1429880113574580374/4N0FiLxEEumr35xwilw6Ct5QKPrOTe6b56OrFDk7qSKrwdVphIOnEWGN7TDJ-_X0ry1I";
   const payload = {
     embeds: [
       {
