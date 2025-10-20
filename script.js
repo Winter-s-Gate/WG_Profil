@@ -102,7 +102,6 @@ function sendToDiscord() {
         }
       }
     ]
-	],
   };
 
   fetch(webhookURL, {
