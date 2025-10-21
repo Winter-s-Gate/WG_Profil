@@ -80,7 +80,7 @@ function sendToDiscord() {
     embeds: [
 		{color: 16711680, fields: 
 			[
-				{name: "📜Profile", value: ${fields.name} },
+				{name: "📜Profile", value: fields.name },
 				{name: "⚧️ Gender", value: fields.gender, inline: true}
 			],
 			thumbnail: {url: "https://melinacrsl.github.io/Winter-sGates-Profil/assets/img/wgcitylogo.png"}
@@ -96,13 +96,13 @@ function sendToDiscord() {
 			[
 				{name: "🎓 Major", value: fields.major, inline: true },
 				{name: "🏅 Activities", value: activities, inline: true },
-				{name: "🏛️ Greek House", value: ${greekEmoji} ${fields.greek}, inline: true },
+				{name: "🏛️ Greek House", value: greekEmoji + " "+ fields.greek, inline: true },
 				{name: "🎭 Role", value: fields.role, inline: true }
 			]
 		},
 		{title: "🏠 Resident", color: 16711680, fields: 
 			[
-				{name: "🏠 Address", value: "fields.address", inline: true},
+				{name: "🏠 Address", value: fields.address, inline: true},
 				{name: "💼 Job", value: fields.job, inline: true }
 			]
 		},
