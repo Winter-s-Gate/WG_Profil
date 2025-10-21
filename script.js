@@ -36,6 +36,16 @@ function sanitizeName(name) {
         .replace(/\s+/g, "-");
 }
 
+function saveRPName() {
+  const name = document.getElementById("rpNameInput").value;
+  if (!name) {
+    alert("Enter save ID !.");
+    return;
+  }
+  localStorage.setItem("rp_name", name);
+  window.location.href = "profile.html";
+}
+
 // 🔙 Bouton retour
 function goBack() {
     window.history.back();
