@@ -23,9 +23,12 @@
 			<button onclick="goBack()">← Retour</button>
 		</div>
 		<script>
-			const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEkcpHTwSKEdy3rFsC0FJORsRPjD_k67Vx9yeelD8mN4EtUuFpV6pOZIXuvdd1mTf7Eo63yLk-Ru8O/pub?gid=764766460&single=true&output=csv";
-			const rpName = localStorage.getItem("rp_name") || "melina"; // à adapter selon ton système
-			loadRPProfileFromSheet(csvURL, rpName);
-		</script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEkcpHTwSKEdy3rFsC0FJORsRPjD_k67Vx9yeelD8mN4EtUuFpV6pOZIXuvdd1mTf7Eo63yLk-Ru8O/pub?gid=764766460&single=true&output=csv";
+				const rpName = localStorage.getItem("rp_name") || "melina";
+				loadRPProfileFromSheet(csvURL, rpName);
+			});
+</script>
+
 	</body>
 </html>
