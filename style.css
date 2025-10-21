@@ -231,13 +231,13 @@ body {
 }
 
 .rp-frame h3 {
-  font-size: 24px;
+  font-size: 50px;
   margin-bottom: 15px;
   text-shadow: 0 0 4px #9b1e23;
 }
 
 .rp-frame p {
-  font-size: 18px;
+  font-size: 35px;
   margin: 8px 0;
 }
 
@@ -253,7 +253,7 @@ body {
   color: #f0f0f0;
   border: none;
   border-radius: 6px;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Joseph', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -272,7 +272,7 @@ body {
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Joseph', sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
