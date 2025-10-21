@@ -1,88 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>RP Profile</title>
+		<title>Profil RP</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<div class="rp-profile">
-			<h2 id="nameField">Nom du personnage</h2>
-			<img id="portraitDisplay" src="" alt="Portrait RP" class="rp-portrait">
-		<!-- 🧍 Identité -->
-			<div class="rp-frame">
-				<h3>Identity</h3>
-				<p><strong>Gender :</strong> <span id="genderField">...</span></p>
-				<p><strong>DoB :</strong> <span id="dobField">...</span></p>
-				<p><strong>Height :</strong> <span id="heightField">...</span></p>
-				<p><strong>Weight :</strong> <span id="weightField">...</span></p>
-			</div>
-		<!-- 🎓 Académique -->
-			<div class="rp-frame">
-				<h3>Academic</h3>
-				<p><strong>Major:</strong> <span id="majorField">...</span></p>
-				<p><strong>Greek House:</strong> <span id="greekField">...</span></p>
-				<img id="greekLogo" src="" alt="Greek House Logo" style="max-height: 40px; vertical-align: middle; margin-left: 10px; display: none;">
-			</div>
+			<h2 id="rpName">Nom RP</h2>
+			<img id="rpPortrait" src="" alt="Portrait RP" width="256">
 
-		<!-- 📖 Histoire -->
-			<div class="rp-frame">
-				<h3>Storyline</h3>
-				<p id="storyField">...</p>
-			</div>
+			<p><strong>Genre:</strong> <span id="rpGender"></span></p>
+			<p><strong>Date de naissance:</strong> <span id="rpDOB"></span></p>
+			<p><strong>Taille:</strong> <span id="rpHeight"></span></p>
+			<p><strong>Poids:</strong> <span id="rpWeight"></span></p>
+			<p><strong>Maison Greek:</strong> <span id="rpGreek"></span></p>
+			<p><strong>Rôle:</strong> <span id="rpRole"></span></p>
+			<p><strong>Histoire RP:</strong></p>
+			<p id="rpStory"></p>
 
-		<!-- 📤 Boutons -->
-			<div class="rp-buttons">
-				<button onclick="window.location.href='form.html'">📝 edit</button>
-				<!--<button onclick="sendToDiscord()">📤 send</button> -->
-				<button class="back-button" onclick="window.location.href='index.html'">← back</button>
-			</div>
+			<button onclick="goBack()">← Retour</button>
 		</div>
-
 		<script>
-			// 🔄 Chargement des données depuis localStorage
-			const fields = {
-				nameField: "rp_name",
-				genderField: "rp_gender",
-				dobField: "rp_dob",
-				heightField: "rp_height",
-				weightField: "rp_weight",
-				majorField: "rp_major",
-				greekField: "rp_greek",
-				storyField: "rp_story"
-			};
-
-			for (const [id, key] of Object.entries(fields)) {
-				const el = document.getElementById(id);
-				if (el) el.textContent = localStorage.getItem(key) || "...";
-			}
-
-			// 🏛️ Logo de la maison Greek
-			const greek = localStorage.getItem("rp_greek");
-			const logoMap = {
-				abg: "assets/img/abg.png",
-				acd: "assets/img/acd.png",
-				kop: "assets/img/kop.png",
-				osr: "assets/img/osr.png",
-				pes: "assets/img/pes.png",
-				pkv: "assets/img/pkv.png"
-			};
-
-			if (greek && logoMap[greek.toLowerCase()]) {
-				const logo = document.getElementById("greekLogo");
-				logo.src = logoMap[greek.toLowerCase()];
-				logo.style.display = "inline-block";
-			}
-			function sanitizeName(name) {
-				return name
-				.toLowerCase()
-				.normalize("NFD").replace(/[\u0300-\u036f]/g, "") // retire les accents
-				.replace(/\s+/g, "-"); // remplace les espaces par tirets
-			}
-			const portraitName = sanitizeName(localStorage.getItem("rp_name") || "default");
-			const imageURL = `https://melinacrsl.github.io/Winter-sGates-Profil/assets/img/portraits/${portraitName}.png`;
-			const portrait = document.getElementById("portraitDisplay");
-			if (portrait) portrait.src = imageURL;
+			const csvURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEkcpHTwSKEdy3rFsC0FJORsRPjD_k67Vx9yeelD8mN4EtUuFpV6pOZIXuvdd1mTf7Eo63yLk-Ru8O/pub?gid=764766460&single=true&output=csv";
+			const rpName = localStorage.getItem("rp_name") || "melina"; // à adapter selon ton système
+			loadRPProfileFromSheet(csvURL, rpName);
 		</script>
 	</body>
 </html>
