@@ -281,3 +281,12 @@ body {
 .back-button:hover {
   background-color: #083150;
 }
+
+.rp-portrait {
+  display: block;
+  margin: 10px auto;
+  max-width: 200px;
+  border: 4px solid #9b1e23; /* rouge RP */
+  border-radius: 8px;
+  box-shadow: 0 0 16px #ffffff;
+}
