@@ -36,6 +36,11 @@ function sanitizeName(name) {
         .replace(/\s+/g, "-");
 }
 
+function showSavePrompt() {
+  document.getElementById("saveSection").style.display = "block";
+  document.getElementById("backButton").style.display = "none";
+}
+
 function saveRPName() {
   const name = document.getElementById("rpNameInput").value;
   if (!name) {
