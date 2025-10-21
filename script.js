@@ -89,19 +89,16 @@ function sendToDiscord() {
 			{ name: "🎂 DoB", value: fields.dob, inline: true },
 			{ name: "📏 Height", value: fields.height, inline: true },
 			{ name: "⚖️ Weight", value: fields.weight, inline: true },
-			{ name: "\u200B", value: "\u200B" }, // ligne vide
 			{ name: "**🎓 Academic**", value: "\u200B" },
 			{ name: "🎓 Major", value: fields.major, inline: true },
 			{ name: "🏅 Activities", value: activities, inline: true },
 			{ name: "🏛️ Greek House", value: `${greekEmoji} ${fields.greek}`, inline: true },
 			{ name: "🎭 Role", value: fields.role, inline: true },
-			{ name: "\u200B", value: "\u200B" }, // ligne vide
 			{ name: "**🏠 Resident**", value: "\u200B" },
 			{ name: "🏠 Address", value: fields.address, inline: true },
 			{ name: "💼 Job", value: fields.job, inline: true },
-			{ name: "\u200B", value: "\u200B" }, // ligne vide
 			{ name: "**📖 Backstory**", value: "\u200B" },
-			{ name: "📖 Story", value: fields.story }
+			{ name: "\u200B", value: fields.story }
         ],
         footer: {
           text: "Winter's Gates RP System"
