@@ -77,41 +77,30 @@ function sendToDiscord() {
   // 📤 Webhook Discord avec embed stylisé
   const webhookURL = "https://discord.com/api/webhooks/1429880113574580374/4N0FiLxEEumr35xwilw6Ct5QKPrOTe6b56OrFDk7qSKrwdVphIOnEWGN7TDJ-_X0ry1I";
   const payload = {
-    embeds: [
-		{color: 16711680, fields: 
-			[
-				{name: "📜Profile", value: fields.name },
-				{name: "⚧️ Gender", value: fields.gender, inline: true}
-			],
-			thumbnail: {url: "https://melinacrsl.github.io/Winter-sGates-Profil/assets/img/wgcitylogo.png"}
+	embeds: [
+		{
+			title: "📜 RP Profile",
+			description: `**Name:** ${fields.name}\n**Gender:** ${fields.gender}\n**DoB:** ${fields.dob}`,
+			color: 16711680
 		},
-		{color: 16711680, fields: 
-			[
-				{name: "🎂 DoB", value: fields.dob, inline: true },
-				{name: "📏 Height", value: fields.height, inline: true },
-				{name: "⚖️Weight", value: fields.weight, inline: true }
-			]
+		{
+			title: "🎓 Academic",
+			description: `**Major:** ${fields.major}\n**Activities:** ${activities}\n**Greek House:** ${greekEmoji} ${fields.greek}`,
+			color: 16711680
 		},
-		{title: "🎓 Academic", color: 16711680,fields: 
-			[
-				{name: "🎓 Major", value: fields.major, inline: true },
-				{name: "🏅 Activities", value: activities, inline: true },
-				{name: "🏛️ Greek House", value: greekEmoji + " "+ fields.greek, inline: true },
-				{name: "🎭 Role", value: fields.role, inline: true }
-			]
+		{
+			title: "🏠 Resident",
+			description: `**Address:** ${fields.address}\n**Job:** ${fields.job}`,
+			color: 16711680
 		},
-		{title: "🏠 Resident", color: 16711680, fields: 
-			[
-				{name: "🏠 Address", value: fields.address, inline: true},
-				{name: "💼 Job", value: fields.job, inline: true }
-			]
-		},
-		{color: 16711680, fields: 
-			[
-				{ name: "📖 Story", value: fields.story }
-			]
+		{
+			title: "📖 Story",
+			description: fields.story,
+			color: 16711680
 		}
-	],
+	]
+};
+
   };
 
   fetch(webhookURL, {
