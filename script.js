@@ -99,8 +99,6 @@ function sendToDiscord() {
 			color: 16711680
 		}
 	]
-};
-
   };
 
   fetch(webhookURL, {
