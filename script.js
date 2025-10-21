@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Chargement initial : profil ou formulaire
     const uuid = localStorage.getItem("rp_uuid");
     if (uuid) {
-        fetch("https://script.google.com/macros/s/AKfycbwWLWpo4Gu6jxgsCdLu5FeqDDub5eBaKN-bWNxI-R0V6cwTYQO5dYz5jvWVTdT_jZvX/exec", {
+        fetch("https://wgprofil.wintersgatesl.workers.dev/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ uuid })
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwWLWpo4Gu6jxgsCdLu5FeqDDub5eBaKN-bWNxI-R0V6cwTYQO5dYz5jvWVTdT_jZvX/exec", {
+            const response = await fetch("https://wgprofil.wintersgatesl.workers.dev/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)

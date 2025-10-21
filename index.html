@@ -91,7 +91,7 @@
 				const uuid = localStorage.getItem("rp_uuid");
 				if (uuid) {
 					// Profil existe → on l'affiche
-					fetch("https://script.google.com/macros/s/AKfycbwWLWpo4Gu6jxgsCdLu5FeqDDub5eBaKN-bWNxI-R0V6cwTYQO5dYz5jvWVTdT_jZvX/exec", {
+					fetch("https://wgprofil.wintersgatesl.workers.dev/", {
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({ uuid })
