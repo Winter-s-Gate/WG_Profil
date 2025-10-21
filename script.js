@@ -1,3 +1,8 @@
+function getUuidFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("uuid");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("rpForm");
     const display = document.getElementById("rpDisplay");
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async e => {
         e.preventDefault();
 
-        const newUuid = crypto.randomUUID();
+        const newUuid = getUuidFromUrl()
         const payload = {
             uuid: newUuid,
             name: document.getElementById("name").value,
