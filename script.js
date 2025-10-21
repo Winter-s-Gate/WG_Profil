@@ -78,40 +78,30 @@ function sendToDiscord() {
   const webhookURL = "https://discord.com/api/webhooks/1429880113574580374/4N0FiLxEEumr35xwilw6Ct5QKPrOTe6b56OrFDk7qSKrwdVphIOnEWGN7TDJ-_X0ry1I";
   const payload = {
     embeds: [
-		{color: 16711680, fields: 
-			[
-				{name: "📜Profile", value: ${fields.name} },
-				{name: "⚧️ Gender", value: fields.gender, inline: true}
-			],
-			thumbnail: {url: "https://melinacrsl.github.io/Winter-sGates-Profil/assets/img/wgcitylogo.png"}
-		},
-		{color: 16711680, fields: 
-			[
-				{name: "🎂 DoB", value: fields.dob, inline: true },
-				{name: "📏 Height", value: fields.height, inline: true },
-				{name: "⚖️Weight", value: fields.weight, inline: true }
-			]
-		},
-		{title: "🎓 Academic", color: 16711680,fields: 
-			[
-				{name: "🎓 Major", value: fields.major, inline: true },
-				{name: "🏅 Activities", value: activities, inline: true },
-				{name: "🏛️ Greek House", value: ${greekEmoji} ${fields.greek}, inline: true },
-				{name: "🎭 Role", value": fields.role, inline: true }
-			]
-		},
-		{title: "🏠 Resident", color: 16711680, fields: 
-			[
-				{name: "🏠 Address", value: "fields.address", inline: true},
-				{name: "💼 Job", value: fields.job, inline: true }
-			]
-		},
-		{color: 16711680, fields: 
-			[
-				{ name: "📖 Story", value: fields.story }
-			]
-		}
-	],
+      {
+        title: `📜 RP Profile: ${fields.name}`,
+        color: 0x9b1e23,
+        thumbnail: {
+          url: "https://melinacrsl.github.io/Winter-sGates-Profil/assets/img/wgcitylogo.png"
+        },
+        fields: [
+          { name: "⚧️ Gender", value: fields.gender, inline: true },
+          { name: "🎂 DoB", value: fields.dob, inline: true },
+          { name: "📏 Height", value: fields.height, inline: true },
+          { name: "⚖️ Weight", value: fields.weight, inline: true },
+          { name: "🎓 Major", value: fields.major, inline: true },
+          { name: "🏅 Activities", value: activities, inline: true },
+          { name: "🏛️ Greek House", value: `${greekEmoji} ${fields.greek}`, inline: true },
+          { name: "🎭 Role", value: fields.role, inline: true },
+          { name: "🏠 Address", value: fields.address, inline: true },
+          { name: "💼 Job", value: fields.job, inline: true },
+          { name: "📖 Story", value: fields.story }
+        ],
+        footer: {
+          text: "Winter's Gates RP System"
+        }
+      }
+    ]
   };
 
   fetch(webhookURL, {
