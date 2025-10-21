@@ -67,11 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!response.ok) throw new Error("Erreur réseau");
 
-            const profile = await response.json();
-            localStorage.setItem("rp_uuid", newUuid);
-            formContainer.style.display = "none";
-            displayProfile(profile);
-            showUpdateButton();
+            const text = await response.text();
+
+		try {
+			const profile = JSON.parse(text);
+			localStorage.setItem("rp_uuid", newUuid);
+			formContainer.style.display = "none";
+			displayProfile(profile);
+			showUpdateButton();
+		} catch (err) {
+			console.error("Réponse non JSON :", text);
+			alert("Erreur serveur : réponse invalide.");
+		}
+
 
         } catch (err) {
             console.error("Erreur enregistrement :", err);
