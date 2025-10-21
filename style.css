@@ -3,6 +3,13 @@ body {
     line-height: 1.6;
 }
 
+#rpForm input,
+#rpForm textarea {
+    font-size: 25px;
+    padding: 1rem;
+}
+
+
 /* 🌌 Intro animée */
 #intro {
     position: fixed;
