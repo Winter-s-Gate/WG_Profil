@@ -1,69 +1,99 @@
-/* profil */
-.rpCard.none {
-    background: #ffffff;
-    color: #175381;
-}
-.rpCard.abg {
-    background: url('assets/img/abgBg.jpg');
-    color: #39ff14;
-    border-left: 8px solid #c0c0c0;
-}
-.rpCard.acd {
-    background: url('assets/img/acdBg.jpg');
-    color: #dfb9a7;
-    border-left: 8px solid #b99e5d;
-}
-.rpCard.kop {
-    background: url('assets/img/kopBg.jpg');
-    color: #dc143c;
-    border-left: 8px solid #ffd700;
-}
-.rpCard.osr {
-    background: url('assets/img/osrBg.jpg');
-    color: #dc143c;
-    border-left: 8px solid #ffd700;
-}
-.rpCard.pes {
-    background: url('assets/img/pesBg.jpg');
-    color: #000080;
-    border-left: 8px solid #c0c0c0;
-}
-.rpCard.pkv {
-    background: url('assets/img/pkvBg.jpg');
-    color: #4169e1;
-    border-left: 8px solid #c0c0c0;
-}
-.rpCard {
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-top: 2rem;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    color: inherit;
-}
-.rpCard img {
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-.rpInfo p {
-    margin: 0.3rem 0;
-}
-.rpStory {
-    margin-top: 1rem;
-    background: rgba(255,255,255,0.6);
-    padding: 1rem;
-    border-radius: 6px;
+/* 🌌 Intro animée */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
 }
 
-/* form */
+#intro img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+#introContent {
+    position: relative;
+    z-index: 1000;
+}
+
+#Citylogo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+#intro button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: #175381;
+    color: white;
+    cursor: pointer;
+}
+
+/* 📝 Formulaire RP */
+#formContainer {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#rpForm input,
+#rpForm textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#rpForm label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#rpForm button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: #175381;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ✅ Cases à cocher */
+#roleGroup label,
+#activitiesGroup label {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* 🏛️ Menu Greek House */
 .greek-dropdown {
     position: relative;
-    width: 300px;
-    font-family: sans-serif;
+    width: 100%;
+    margin-top: 0.5rem;
 }
+
 .greek-selected,
 .greek-options li {
     display: flex;
@@ -71,12 +101,14 @@
     padding: 0.5rem;
     cursor: pointer;
 }
+
 .greek-selected {
     border: 1px solid #ccc;
     background: #f0f0f0;
     border-radius: 4px;
     margin-bottom: 0.5rem;
 }
+
 .greek-options {
     list-style: none;
     padding: 0;
@@ -87,11 +119,85 @@
     max-height: 200px;
     overflow-y: auto;
 }
+
 .greek-options li:hover {
     background: #eee;
 }
+
 .greek-options img {
     width: 24px;
     height: 24px;
     margin-right: 0.5rem;
+}
+
+/* 🧾 Fiche RP */
+.rpCard {
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: inherit;
+}
+
+.rpCard img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.rpInfo p {
+    margin: 0.3rem 0;
+}
+
+.rpStory {
+    margin-top: 1rem;
+    background: rgba(255,255,255,0.6);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+/* 🏛️ Styles par maison Greek */
+.rpCard.none {
+    background: #ffffff;
+    color: #175381;
+}
+
+.rpCard.abg {
+    background: url('assets/img/abgBg.jpg');
+    color: #39ff14;
+    border-left: 8px solid #c0c0c0;
+}
+
+.rpCard.acd {
+    background: url('assets/img/acdBg.jpg');
+    color: #dfb9a7;
+    border-left: 8px solid #b99e5d;
+}
+
+.rpCard.kop {
+    background: url('assets/img/kopBg.jpg');
+    color: #dc143c;
+    border-left: 8px solid #ffd700;
+}
+
+.rpCard.osr {
+    background: url('assets/img/osrBg.jpg');
+    color: #dc143c;
+    border-left: 8px solid #ffd700;
+}
+
+.rpCard.pes {
+    background: url('assets/img/pesBg.jpg');
+    color: #000080;
+    border-left: 8px solid #c0c0c0;
+}
+
+.rpCard.pkv {
+    background: url('assets/img/pkvBg.jpg');
+    color: #4169e1;
+    border-left: 8px solid #c0c0c0;
 }
