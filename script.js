@@ -128,6 +128,14 @@ function getCheckedValues(groupId) {
     return Array.from(checkboxes).map(cb => cb.value).join(", ");
 }
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const yyyy = date.getFullYear();
+  const mm = String(date.getMonth() + 1).padStart(2, '0');
+  const dd = String(date.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 // Affichage du profil RP
 function displayProfile(profile) {
     const container = document.getElementById("rpDisplay");
@@ -142,7 +150,7 @@ function displayProfile(profile) {
         <div class="rpInfo">
             <label>💳​ Identity:</label>
             <p><strong>Gender:</strong> ${profile.gender}</p>
-            <p><strong>DoB:</strong> ${profile.dob}</p>
+            <p><strong>DoB:</strong> ${formatDate(profile.dob)}</p>
             <p><strong>Height:</strong> ${profile.height}</p>
             <p><strong>Weight:</strong> ${profile.weight}</p>
             <p><strong>Role:</strong> ${profile.role}</p>
@@ -165,6 +173,9 @@ function displayProfile(profile) {
 function showUpdateButton() {
     const btn = document.createElement("button");
     btn.textContent = "✏️ Edit";
-    btn.onclick = () => showPage("formContainer");
+	btn.onclick = () => {
+		profileLoaded = false; // ← autorise la soumission
+		showPage("formContainer");
+	};
     document.getElementById("rpDisplay").appendChild(btn);
 }
