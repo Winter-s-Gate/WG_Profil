@@ -39,9 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			console.log("Profil reçu :", profile);
             if (profile && profile.uuid && profile.name && profile.name.trim() !== "") {
                 profileLoaded = true;
-                formContainer.style.display = "none";
                 displayProfile(profile);
                 showUpdateButton();
+                formContainer.style.display = "none";
+				display.scrollIntoView({ behavior: "smooth" }); // ← scroll vers le profil
             } else {
                 formContainer.style.display = "block";
             }
