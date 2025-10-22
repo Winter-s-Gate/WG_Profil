@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		return;
 	}
 
+  // Masquer l’intro si UUID présent
+	const intro = document.getElementById("intro");
+	if (intro) intro.style.display = "none";
+
 	fetch("https://wgprofil.wintersgatesl.workers.dev/", {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
@@ -69,10 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			fillProfile(profile);
 			showPage("rpDisplay");
 		} else {
-			window.location.href = "form.html?uuid=" + uuid;
+		window.location.href = "form.html?uuid=" + uuid;
 		}
 	})
 	.catch(() => {
 		window.location.href = "form.html?uuid=" + uuid;
 	});
 });
+
