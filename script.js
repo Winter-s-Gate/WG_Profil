@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("UUID manquant. Impossible d’entrer.");
                 return;
             }
-            window.location.href = "WG_Profil/index.html?uuid=" + uuid;
+            window.location.href = "index.html?uuid=" + uuid;
         };
     }
 });
