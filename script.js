@@ -21,25 +21,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Chargement initial : profil ou formulaire
-    const uuid = localStorage.getItem("rp_uuid");
-    if (uuid) {
-        fetch("https://wgprofil.wintersgatesl.workers.dev/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ uuid })
-        })
-        .then(res => res.json())
-        .then(profile => {
-            displayProfile(profile);
-            showUpdateButton();
-        })
-        .catch(err => {
-            console.error("Erreur chargement profil :", err);
-            formContainer.style.display = "block";
-        });
-    } else {
-        formContainer.style.display = "block";
-    }
+    const uuid = getUuidFromUrl();
+    if (!uuid) {
+		formContainer.style.display = "block";
+		return;
+	}
+	fetch("https://wgprofil.wintersgatesl.workers.dev/", {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({ uuid })
+	})
+	.then(res => res.text())
+	.then(text => {
+		try {
+			const profile = JSON.parse(text);
+				if (profile && profile.uuid) {
+					formContainer.style.display = "none";
+					displayProfile(profile);
+					showUpdateButton();
+				} else {
+					formContainer.style.display = "block";
+				}
+			} catch (err) {
+				console.error("Réponse non JSON :", text);
+				formContainer.style.display = "block";
+			}
+		})
+		.catch(err => {
+			console.error("Erreur chargement profil :", err);
+			formContainer.style.display = "block";
+		});
 
     // Soumission du formulaire
     form.addEventListener("submit", async e => {
