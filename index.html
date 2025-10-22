@@ -7,99 +7,38 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body>
-
-	<!-- 🎬 Intro animée -->
-	<div id="intro">
-		<img id="imgBlue" src="assets/img/bg1.png">
-		<img id="imgRed" src="assets/img/bg2.png">
-		<img id="imgFusion" src="assets/img/bg.png">
-		<div id="introContent">
-			<audio id="introSound" src="assets/sound/entrance.mp3"></audio>
-			<img src="assets/img/wgcitylogo.png" id="Citylogo">
-			<h2>Welcome<br>To<br>Winter's Gate</h2>
-			<button onclick="enterRP()">Enter</button>
-		</div>
-	</div>
-
-	<!-- ✍️ Formulaire RP -->
-	<div id="formContainer" style="display:none;">
-		<form id="rpForm">
-			<h2>Create your profile</h2>
-			<label>💳​ Identity:</label>
-				<input type="text" id="name" placeholder="Name" required>
-				<input type="text" id="gender" placeholder="Gender">
-				<input type="date" id="dob" placeholder="Date of Birth">
-				<input type="text" id="height" placeholder="Height">
-				<input type="text" id="weight" placeholder="Weight">
-				<input type="text" id="major" placeholder="Major">
-			
-			<!-- Greek House -->
-			<label>🏛️ Greek House:</label>
-			<div class="greek-dropdown">
-				<div class="selected" id="greekSelected">None</div>
-					<ul class="greek-options" id="greekOptions">
-						<li data-value="abg"><img src="assets/img/abg.png"> ABG</li>
-						<li data-value="acd"><img src="assets/img/acd.png"> ACD</li>
-						<li data-value="kop"><img src="assets/img/kop.png"> KOP</li>
-						<li data-value="osr"><img src="assets/img/osr.png"> OSR</li>
-						<li data-value="pes"><img src="assets/img/pes.png"> PES</li>
-						<li data-value="pkv"><img src="assets/img/pkv.png"> PKV</li>
-						<li data-value="none"> None</li>
-					</ul>
-					<input type="hidden" id="greek" value="none">
-				</div>
-				
-			<!-- Role (checkbox) -->
-			<label>🎭 Role:</label>
-			<div id="roleGroup">
-				<label><input type="checkbox" value="Teacher"> 📚​ Teacher</label>
-				<label><input type="checkbox" value="Student"> Student 🎓​</label>
-				<label><input type="checkbox" value="Coach"> ​📈 Coach</label>
-				<label><input type="checkbox" value="Athlete"> Athlete 🏋️​</label>
-				<label><input type="checkbox" value="Resident"> 🎩 Resident</label>
+		<!-- 🎬 Intro animée -->
+		<div id="intro">
+			<img id="imgBlue" src="assets/img/bg1.png">
+			<img id="imgRed" src="assets/img/bg2.png">
+			<img id="imgFusion" src="assets/img/bg.png">
+			<div id="introContent">
+				<audio id="introSound" src="assets/sound/entrance.mp3"></audio>
+				<img src="assets/img/wgcitylogo.png" id="Citylogo">
+				<h2>Welcome<br>To<br>Winter's Gate</h2>
+				<button onclick="enterRP()">Enter</button>
 			</div>
-
-			<!-- Activities (checkbox) -->
-			<label>🎨 Activities:</label>
-			<div id="activitiesGroup">
-				<label><input type="checkbox" value="Drama"> 🎭​ Drama</label>
-				<label><input type="checkbox" value="Music"> Music 🎵​</label>
-				<label><input type="checkbox" value="Football"> 🏈​ Football</label>
-				<label><input type="checkbox" value="Basketball"> Basketball 🏀​</label>
-				<label><input type="checkbox" value="Tennis"> Tennis 🎾​​</label>
-				<label><input type="checkbox" value="Swimteam"> 🏊‍ Swimteam​</label>
-				<label><input type="checkbox" value="Cheerleaders"> Cheerleaders 📣​​</label>
-			</div>
-				<input type="text" id="address" placeholder="Address">
-				<input type="text" id="job" placeholder="Job">
-			
-			<label>🧾 Story:</label>
-				<textarea id="storyline" placeholder="Your story"></textarea>
-				<input type="text" id="image" placeholder="Portrait image URL">
-
-				<button type="submit">💾 Save</button>
-			</form>
 		</div>
-
-		<!-- 🧾 Fiche RP -->
-		<div id="rpDisplay" style="display:none;"></div>
-	
-		<script>
-			function enterRP() {
-				document.getElementById("intro").style.display = "none";
-				document.getElementById("introSound").play();
-
-				// On tente de récupérer l'UUID depuis localStorage (ou autre source si tu veux)
-				const uuid = localStorage.getItem("rp_uuid");
-
-				if (uuid) {
-					// Redirection vers le profil avec UUID dans l'URL
-					window.location.href = "index.html?uuid=" + uuid;
-				} else {
-					// Aucun UUID → afficher le formulaire d’entrée
-					document.getElementById("formContainer").style.display = "block";
-				}
-			}
-		</script>
+		<h2 id="rpName"></h2>
+			<img id="rpImage" alt="Portrait RP" style="max-width:75px;height:auto;">
+			<div class="rpInfo">
+				<p><strong>Gender:</strong> <span id="rpGender"></span></p>
+				<p><strong>DoB:</strong> <span id="rpDob"></span></p>
+				<p><strong>Height:</strong> <span id="rpHeight"></span></p>
+				<p><strong>Weight:</strong> <span id="rpWeight"></span></p>
+				<p><strong>Role:</strong> <span id="rpRole"></span></p>
+				<p><strong>Major:</strong> <span id="rpMajor"></span></p>
+				<p><strong>Greek House:</strong> <span id="rpGreek"></span></p>
+				<p><strong>Activities:</strong> <span id="rpActivities"></span></p>
+				<p><strong>Address:</strong> <span id="rpAddress"></span></p>
+				<p><strong>Job:</strong> <span id="rpJob"></span></p>
+			</div>
+			<div class="rpStory">
+				<h3>📔 Backstory</h3>
+				<p id="rpStoryline"></p>
+			</div>
+			<button id="editBtn">✏️ Edit</button>	
+		<script src="index.js" defer></script>
 	</body>
+	
 </html>
