@@ -5,7 +5,6 @@ function getUuidFromUrl() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("rpForm");
-    const display = document.getElementById("rpDisplay");
     const formContainer = document.getElementById("formContainer");
 
     // Gestion du menu Greek House
@@ -23,40 +22,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Chargement initial : profil ou formulaire
     const uuid = getUuidFromUrl();
     if (!uuid) {
-		formContainer.style.display = "block";
-		return;
-	}
-	fetch("https://wgprofil.wintersgatesl.workers.dev/", {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ uuid })
-	})
-	.then(res => res.text())
-	.then(text => {
-		try {
-			const profile = JSON.parse(text);
-				if (profile && profile.uuid) {
-					formContainer.style.display = "none";
-					displayProfile(profile);
-					showUpdateButton();
-				} else {
-					formContainer.style.display = "block";
-				}
-			} catch (err) {
-				console.error("Réponse non JSON :", text);
-				formContainer.style.display = "block";
-			}
-		})
-		.catch(err => {
-			console.error("Erreur chargement profil :", err);
-			formContainer.style.display = "block";
-		});
+        formContainer.style.display = "block";
+        return;
+    }
+
+    fetch("https://wgprofil.wintersgatesl.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ uuid })
+    })
+    .then(res => res.text())
+    .then(text => {
+        try {
+            const profile = JSON.parse(text);
+            if (profile && profile.uuid) {
+                formContainer.style.display = "none";
+                displayProfile(profile);
+                showUpdateButton();
+            } else {
+                formContainer.style.display = "block";
+            }
+        } catch (err) {
+            console.error("Réponse non JSON :", text);
+            formContainer.style.display = "block";
+        }
+    })
+    .catch(err => {
+        console.error("Erreur chargement profil :", err);
+        formContainer.style.display = "block";
+    });
 
     // Soumission du formulaire
     form.addEventListener("submit", async e => {
         e.preventDefault();
 
-        const newUuid = getUuidFromUrl()
+        const newUuid = getUuidFromUrl();
         const payload = {
             uuid: newUuid,
             name: document.getElementById("name").value,
@@ -81,22 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(payload)
             });
 
-            if (!response.ok) throw new Error("Erreur réseau");
-
             const text = await response.text();
+            const profile = JSON.parse(text);
 
-		try {
-			const profile = JSON.parse(text);
-			localStorage.setItem("rp_uuid", newUuid);
-			formContainer.style.display = "none";
-			displayProfile(profile);
-			showUpdateButton();
-		} catch (err) {
-			console.error("Réponse non JSON :", text);
-			alert("Erreur serveur : réponse invalide.");
-		}
-
-
+            formContainer.style.display = "none";
+            displayProfile(profile);
+            showUpdateButton();
         } catch (err) {
             console.error("Erreur enregistrement :", err);
             alert("Échec de l’enregistrement du profil.");
@@ -114,27 +104,29 @@ function getCheckedValues(groupId) {
 function displayProfile(profile) {
     const container = document.getElementById("rpDisplay");
     const house = (profile["greek house"] || profile.greek || "none").toLowerCase();
+    const imageUrl = profile.image || "";
+    const validImage = imageUrl.startsWith("http");
 
     container.className = "rpCard " + house;
     container.style.display = "block";
 
     container.innerHTML = `
         <h2>${profile.name}</h2>
-        <img src="${profile.image}" alt="Portrait RP">
+        ${validImage ? `<img src="${imageUrl}" alt="Portrait RP">` : `<div class="brokenImage">Image manquante</div>`}
         <div class="rpInfo">
-			<label>💳​ Identity:</label>
-				<p><strong>Gender:</strong> ${profile.gender}</p>
-				<p><strong>DoB:</strong> ${profile.dob}</p>
-				<p><strong>Height:</strong> ${profile.height}</p>
-				<p><strong>Weight:</strong> ${profile.weight}</p>
-				<p><strong>Role:</strong> ${profile.role}</p>
-				<p><strong>Major:</strong> ${profile.major}</p>
-			<label>🏛️ Greek House:</label>
-				<p><strong>Maison Greek:</strong> ${profile["greek house"] || profile.greek}</p>
-			<label>🎨 Activities:</label>
-				<p><strong>Activities:</strong> ${profile.activities}</p>
-				<p><strong>Address:</strong> ${profile.address}</p>
-				<p><strong>Job:</strong> ${profile.job}</p>
+            <label>💳​ Identity:</label>
+            <p><strong>Gender:</strong> ${profile.gender}</p>
+            <p><strong>DoB:</strong> ${profile.dob}</p>
+            <p><strong>Height:</strong> ${profile.height}</p>
+            <p><strong>Weight:</strong> ${profile.weight}</p>
+            <p><strong>Role:</strong> ${profile.role}</p>
+            <p><strong>Major:</strong> ${profile.major}</p>
+            <label>🏛️ Greek House:</label>
+            <p><strong>Maison Greek:</strong> ${profile["greek house"] || profile.greek}</p>
+            <label>🎨 Activities:</label>
+            <p><strong>Activities:</strong> ${profile.activities}</p>
+            <p><strong>Address:</strong> ${profile.address}</p>
+            <p><strong>Job:</strong> ${profile.job}</p>
         </div>
         <div class="rpStory">
             <h3>📔 Backstory</h3>
@@ -153,3 +145,13 @@ function showUpdateButton() {
     };
     document.getElementById("rpDisplay").appendChild(btn);
 }
+
+// Bouton d’entrée RP
+document.getElementById("enterBtn").onclick = () => {
+    const uuid = getUuidFromUrl();
+    if (!uuid) {
+        alert("UUID manquant. Impossible d’entrer.");
+        return;
+    }
+    window.location.href = "WG_Profil/index.html?uuid=" + uuid;
+};

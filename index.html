@@ -88,21 +88,15 @@
 			function enterRP() {
 				document.getElementById("intro").style.display = "none";
 				document.getElementById("introSound").play();
+
+				// On tente de récupérer l'UUID depuis localStorage (ou autre source si tu veux)
 				const uuid = localStorage.getItem("rp_uuid");
+
 				if (uuid) {
-					// Profil existe → on l'affiche
-					fetch("https://wgprofil.wintersgatesl.workers.dev/", {
-						method: "POST",
-						headers: { "Content-Type": "application/json" },
-						body: JSON.stringify({ uuid })
-					})
-					.then(res => res.json())
-					.then(profile => {
-						displayProfile(profile);
-						showUpdateButton();
-					});
+					// Redirection vers le profil avec UUID dans l'URL
+					window.location.href = "WG_Profil/index.html?uuid=" + uuid;
 				} else {
-					// Aucun profil → on affiche le formulaire
+					// Aucun UUID → afficher le formulaire d’entrée
 					document.getElementById("formContainer").style.display = "block";
 				}
 			}
