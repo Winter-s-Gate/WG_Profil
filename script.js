@@ -3,6 +3,14 @@ function getUuidFromUrl() {
     return params.get("uuid");
 }
 
+function showPage(pageId) {
+    const pages = ["formContainer", "rpDisplay"];
+    pages.forEach(id => {
+        const el = document.getElementById(id);
+        el.style.display = (id === pageId) ? "block" : "none";
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("rpForm");
     const formContainer = document.getElementById("formContainer");
@@ -26,34 +34,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // Chargement initial : profil ou formulaire
     const uuid = getUuidFromUrl();
     if (!uuid) {
-        formContainer.style.display = "block";
+        showPage("formContainer");
         return;
     }
 
     fetch("https://wgprofil.wintersgatesl.workers.dev/?uuid=" + uuid)
-
     .then(res => res.text())
     .then(text => {
         try {
-			const profile = JSON.parse(text);
-			console.log("Profil reçu :", profile);
+            const profile = JSON.parse(text);
+            console.log("Profil reçu :", profile);
             if (profile && profile.uuid && profile.name && profile.name.trim() !== "") {
                 profileLoaded = true;
                 displayProfile(profile);
                 showUpdateButton();
-                formContainer.style.display = "none";
-				display.scrollIntoView({ behavior: "smooth" }); // ← scroll vers le profil
+                showPage("rpDisplay");
             } else {
-                formContainer.style.display = "block";
+                showPage("formContainer");
             }
         } catch (err) {
             console.error("Réponse non JSON :", text);
-            formContainer.style.display = "block";
+            showPage("formContainer");
         }
     })
     .catch(err => {
         console.error("Erreur chargement profil :", err);
-        formContainer.style.display = "block";
+        showPage("formContainer");
     });
 
     // Soumission du formulaire
@@ -93,9 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const text = await response.text();
             const profile = JSON.parse(text);
 
-            formContainer.style.display = "none";
             displayProfile(profile);
             showUpdateButton();
+            showPage("rpDisplay");
         } catch (err) {
             console.error("Erreur enregistrement :", err);
             alert("Échec de l’enregistrement du profil.");
@@ -130,8 +136,6 @@ function displayProfile(profile) {
     const validImage = imageUrl.startsWith("http");
 
     container.className = "rpCard " + house;
-    container.style.display = "block";
-
     container.innerHTML = `
         <h2>${profile.name}</h2>
         ${validImage ? `<img src="${imageUrl}" alt="Portrait RP" style="max-width:75px;height:auto;">` : `<div class="brokenImage">Image manquante</div>`}
@@ -161,9 +165,6 @@ function displayProfile(profile) {
 function showUpdateButton() {
     const btn = document.createElement("button");
     btn.textContent = "✏️ Edit";
-    btn.onclick = () => {
-        document.getElementById("formContainer").style.display = "block";
-        document.getElementById("rpDisplay").style.display = "none";
-    };
+    btn.onclick = () => showPage("formContainer");
     document.getElementById("rpDisplay").appendChild(btn);
 }
