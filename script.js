@@ -38,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.text())
     .then(text => {
         try {
+			console.log("Profil reçu :", profile);
             const profile = JSON.parse(text);
-            if (profile && profile.uuid) {
+            if (profile && profile.uuid && profile.name && profile.name.trim() !== "") {
                 profileLoaded = true;
                 formContainer.style.display = "none";
                 displayProfile(profile);
