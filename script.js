@@ -6,18 +6,22 @@ function getUuidFromUrl() {
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("rpForm");
     const formContainer = document.getElementById("formContainer");
+    const display = document.getElementById("rpDisplay");
+    let profileLoaded = false;
 
     // Gestion du menu Greek House
     const greekOptions = document.getElementById("greekOptions");
     const greekSelected = document.getElementById("greekSelected");
     const greekInput = document.getElementById("greek");
 
-    greekOptions.addEventListener("click", e => {
-        const li = e.target.closest("li");
-        if (!li) return;
-        greekSelected.innerHTML = li.innerHTML;
-        greekInput.value = li.dataset.value;
-    });
+    if (greekOptions) {
+        greekOptions.addEventListener("click", e => {
+            const li = e.target.closest("li");
+            if (!li) return;
+            greekSelected.innerHTML = li.innerHTML;
+            greekInput.value = li.dataset.value;
+        });
+    }
 
     // Chargement initial : profil ou formulaire
     const uuid = getUuidFromUrl();
@@ -36,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const profile = JSON.parse(text);
             if (profile && profile.uuid) {
+                profileLoaded = true;
                 formContainer.style.display = "none";
                 displayProfile(profile);
                 showUpdateButton();
@@ -55,6 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Soumission du formulaire
     form.addEventListener("submit", async e => {
         e.preventDefault();
+
+        if (profileLoaded) {
+            alert("Profil déjà existant. Utilise ✏️ pour modifier.");
+            return;
+        }
 
         const newUuid = getUuidFromUrl();
         const payload = {
@@ -92,6 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Échec de l’enregistrement du profil.");
         }
     });
+
+    // Bouton d’entrée RP (sécurisé)
+    const enterBtn = document.getElementById("enterBtn");
+    if (enterBtn) {
+        enterBtn.onclick = () => {
+            const uuid = getUuidFromUrl();
+            if (!uuid) {
+                alert("UUID manquant. Impossible d’entrer.");
+                return;
+            }
+            window.location.href = "WG_Profil/index.html?uuid=" + uuid;
+        };
+    }
 });
 
 // Fonction utilitaire pour cases à cocher
@@ -112,7 +135,7 @@ function displayProfile(profile) {
 
     container.innerHTML = `
         <h2>${profile.name}</h2>
-        ${validImage ? `<img src="${imageUrl}" alt="Portrait RP">` : `<div class="brokenImage">Image manquante</div>`}
+        ${validImage ? `<img src="${imageUrl}" alt="Portrait RP" style="max-width:75px;height:auto;">` : `<div class="brokenImage">Image manquante</div>`}
         <div class="rpInfo">
             <label>💳​ Identity:</label>
             <p><strong>Gender:</strong> ${profile.gender}</p>
@@ -145,13 +168,3 @@ function showUpdateButton() {
     };
     document.getElementById("rpDisplay").appendChild(btn);
 }
-
-// Bouton d’entrée RP
-document.getElementById("enterBtn").onclick = () => {
-    const uuid = getUuidFromUrl();
-    if (!uuid) {
-        alert("UUID manquant. Impossible d’entrer.");
-        return;
-    }
-    window.location.href = "WG_Profil/index.html?uuid=" + uuid;
-};
