@@ -69,13 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	})
 	.then(res => res.json())
 	.then(profile => {
-		if (profile && profile.uuid && profile.name && profile.name.trim() !== "") {
+		console.log("Profil reçu :", profile); // ← ajoute ça
+		if (profile && profile.uuid && typeof profile.name === "string" && profile.name.trim().length > 0) {
 			fillProfile(profile);
 			showPage("rpDisplay");
 		} else {
-		window.location.href = "form.html?uuid=" + uuid;
+			window.location.href = "form.html?uuid=" + uuid;
 		}
 	})
+
 	.catch(() => {
 		window.location.href = "form.html?uuid=" + uuid;
 	});
