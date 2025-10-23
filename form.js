@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	showPage("formContainer");
+	console.log("Payload envoyé :", payload);
 
 	fetch("https://wgprofil.wintersgatesl.workers.dev/", {
 		method: "POST",
