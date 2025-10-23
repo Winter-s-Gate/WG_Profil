@@ -173,42 +173,42 @@ body {
 }
 
 /* 🏛️ Styles par maison Greek */
-.rpCard.none {
+body.none {
     background: #ffffff;
     color: #175381;
 }
 
-.rpCard.abg {
+body.abg {
     background: url('assets/img/abgBg.jpg');
     color: #39ff14;
     border-left: 8px solid #c0c0c0;
 }
 
-.rpCard.acd {
+body.acd {
     background: url('assets/img/acdBg.jpg');
     color: #dfb9a7;
     border-left: 8px solid #b99e5d;
 }
 
-.rpCard.kop {
+body.kop {
     background: url('assets/img/kopBg.jpg');
     color: #dc143c;
     border-left: 8px solid #ffd700;
 }
 
-.rpCard.osr {
+body.osr {
     background: url('assets/img/osrBg.jpg');
     color: #dc143c;
     border-left: 8px solid #ffd700;
 }
 
-.rpCard.pes {
+body.pes {
     background: url('assets/img/pesBg.jpg');
     color: #000080;
     border-left: 8px solid #c0c0c0;
 }
 
-.rpCard.pkv {
+body.pkv {
     background: url('assets/img/pkvBg.jpg');
     color: #4169e1;
     border-left: 8px solid #c0c0c0;
