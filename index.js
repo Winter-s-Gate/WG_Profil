@@ -77,7 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
       fillProfile(profile);
       showPage("rpDisplay");
     } else {
-      showPage("intro");
+        console.warn("Profil incomplet ou invalide, redirection vers formulaire.");
+        window.location.href = "form.html?uuid=" + uuid;
     }
   })
   .catch(err => {
