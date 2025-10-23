@@ -1,3 +1,7 @@
+let uuid;
+document.addEventListener("DOMContentLoaded", () => {
+    uuid = getUuidFromUrl();
+
 function getUuidFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("uuid");
