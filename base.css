@@ -105,11 +105,13 @@ body {
   border-radius: 50%; /* 👈 cercle parfait */
   border: 4px solid #fff; /* 👈 cadre blanc */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5); /* 👈 ombre douce */
-  margin: 0 auto 1rem auto; /* 👈 centre horizontalement */
-  display: block;           /* 👈 nécessaire pour que margin auto fonctionne */
+  margin-bottom: 1rem;
   object-fit: cover;
 }
 
+.rpHeader {
+  text-align: center;
+}
 /* 🏛️ Menu Greek House */
 .greek-dropdown {
     position: relative;
@@ -225,6 +227,12 @@ body.abg .rpSection {
   box-shadow: 0 0 10px #39ff14;
   padding: 1rem;
   border-radius: 6px;
+}
+body.abg .rpSection h2 {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #39ff14;
 }
 body.abg .rpSection h3 {
   margin-bottom: 0.5rem;
