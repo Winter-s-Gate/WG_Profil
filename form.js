@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(payload)
             });
 			
-			sendWebhook(profile);
+			sendWebhook(payload);
             window.location.href = "index.html?uuid=" + payload.uuid;
         } catch (err) {
             alert("Erreur lors de l'enregistrement.");
