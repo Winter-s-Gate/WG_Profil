@@ -279,7 +279,7 @@ body.acd #rpImage {
 }
 /* 🧾 Carte RP */
 body.acd .rpCard {
-  background: rgba(223, 185, 167, 0.6);
+  background: rgba(223, 185, 167, 0.9);
   border-left: 8px solid #ffff00;
   box-shadow: 0 0 20px #ffff00;
   color: #ffff00;
@@ -303,7 +303,7 @@ body.acd .rpGreekBadge {
 /* 🧱 Sections RP */
 body.acd .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(223, 185, 167, 0.4);
+  background: rgba(223, 185, 167, 0.7);
   border-left: 6px solid #ffff00;
   box-shadow: 0 0 10px #ffff00;
   padding: 1rem;
