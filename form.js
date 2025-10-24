@@ -125,9 +125,12 @@ function sendWebhook(profile) {
 
   const embed = {
     title: `📬 Nouveau profil RP : ${profile.name}`,
-    color: 0x39ff14,
-    thumbnail: {
-      url: profile.image || "https://example.com/default.png"
+    color: 0xff0000,
+	thumbnail: {
+		url: "https://raw.githubusercontent.com/Winter-s-Gate/WG_Profil/main/assets/img/wgcitylogo.png"
+	},
+    image: {
+		url: profile.image || "https://example.com/default.png"
     },
     fields: [
       {
