@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)
             });
+			
+			sendWebhook(profile);
             window.location.href = "index.html?uuid=" + payload.uuid;
         } catch (err) {
             alert("Erreur lors de l'enregistrement.");
@@ -117,3 +119,58 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+function sendWebhook(profile) {
+  const webhookUrl = "https://discord.com/api/webhooks/1424832477956018247/uMdgmPBJCIBlTxO6lCtAbm2pPemQcDEJstug2Nb77gDT9ZeErah0B1zrCeEOnADU8etp";
+
+  const embed = {
+    title: `📬 Nouveau profil RP : ${profile.name}`,
+    color: 0x39ff14,
+    thumbnail: {
+      url: profile.image || "https://example.com/default.png"
+    },
+    fields: [
+      {
+        name: "💳 Identity",
+        value: `**Gender:** ${profile.gender || "?"}\n**DoB:** ${profile.dob || "?"}\n**Height:** ${profile.height || "?"}\n**Weight:** ${profile.weight || "?"}`,
+        inline: true
+      },
+      {
+        name: "🏛️ Greek House",
+        value: `${profile.greek || "None"}\n${profile.greekrole || ""}`,
+        inline: true
+      },
+      {
+        name: "🎭 Role",
+        value: profile.role || "—",
+        inline: false
+      },
+      {
+        name: "🎨 Activities",
+        value: profile.activities || "—",
+        inline: false
+      },
+      {
+        name: "🌎 City Life",
+        value: `**Address:** ${profile.address || "?"}\n**Job:** ${profile.job || "?"}`,
+        inline: false
+      },
+      {
+        name: "📔 Backstory",
+        value: profile.storyline?.slice(0, 1024) || "—",
+        inline: false
+      }
+    ],
+    timestamp: new Date().toISOString()
+  };
+
+  fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ embeds: [embed] })
+  }).then(res => {
+    if (!res.ok) console.error("Erreur webhook :", res.statusText);
+  }).catch(err => {
+    console.error("Erreur webhook :", err);
+  });
+}
