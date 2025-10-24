@@ -341,10 +341,10 @@ body.kop {
 }
 /* 🧾 Carte RP */
 body.kop .rpCard {
-  background: rgba(0, 0, 0, 0.6);
-  border-left: 8px solid #39ff14;
-  box-shadow: 0 0 20px #39ff14;
-  color: #ffffff;
+  background: rgba(220, 20, 60, 0.2);
+  border-left: 8px solid #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+  color: #ffd700;
 }
 /* 🧑‍🎓 Header RP */
 body.kop .rpHeader {
@@ -354,28 +354,22 @@ body.kop .rpHeader {
 body.kop .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39ff14;
-}
-body.kop .rpGreekBadge {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #39ff14;
+  box-shadow: 0 0 10px #ffd700;
 }
 /* 🧱 Sections RP */
 body.kop .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(220, 20, 60, 0.4);
+  border-left: 6px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
   padding: 1rem;
   border-radius: 6px;
 }
 body.kop .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #39ff14;
+  border-bottom: 2px solid #ffd700;
   padding-bottom: 0.3rem;
-  color: #39ff14;
+  color: #ffd700;
 }
 body.kop .rpSection ul {
   list-style: none;
@@ -386,12 +380,12 @@ body.kop .rpSection li {
 }
 /* 📔 Backstory */
 body.kop .rpStory {
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(220, 20, 60, 0.4);
+  border-left: 6px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
   padding: 1rem;
   border-radius: 6px;
-  color: #ffffff;
+  color: #ffd700;
 }
 /* ✏️ Bouton édition */
 body.kop .rpActions button {
@@ -399,24 +393,24 @@ body.kop .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #39ff14;
+  background: #ffd700;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px #39ff14;
+  box-shadow: 0 0 10px #ffd700;
 }
 
 /* OSR */
 body.osr {
   background: url('assets/img/osrBg.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #39ff14;
+  color: #ffd700;
 }
 /* 🧾 Carte RP */
 body.osr .rpCard {
-  background: rgba(0, 0, 0, 0.6);
-  border-left: 8px solid #39ff14;
-  box-shadow: 0 0 20px #39ff14;
-  color: #ffffff;
+  background: rgba(220, 20, 60, 0.2);
+  border-left: 8px solid #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+  color: #ffd700;
 }
 /* 🧑‍🎓 Header RP */
 body.osr .rpHeader {
@@ -426,28 +420,22 @@ body.osr .rpHeader {
 body.osr .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39ff14;
-}
-body.osr .rpGreekBadge {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #39ff14;
+  box-shadow: 0 0 10px #ffd700;
 }
 /* 🧱 Sections RP */
 body.osr .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(220, 20, 60, 0.4);
+  border-left: 6px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
   padding: 1rem;
   border-radius: 6px;
 }
 body.osr .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #39ff14;
+  border-bottom: 2px solid #ffd700;
   padding-bottom: 0.3rem;
-  color: #39ff14;
+  color: #ffd700;
 }
 body.osr .rpSection ul {
   list-style: none;
@@ -458,12 +446,12 @@ body.osr .rpSection li {
 }
 /* 📔 Backstory */
 body.osr .rpStory {
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(220, 20, 60, 0.4);
+  border-left: 6px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
   padding: 1rem;
   border-radius: 6px;
-  color: #ffffff;
+  color: #ffd700;
 }
 /* ✏️ Bouton édition */
 body.osr .rpActions button {
@@ -471,24 +459,24 @@ body.osr .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #39ff14;
+  background: #ffd700;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px #39ff14;
+  box-shadow: 0 0 10px #ffd700;
 }
 
 /* PES */
 body.pes {
   background: url('assets/img/pesBg.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #39ff14;
+  color: #c0c0c0;
 }
 /* 🧾 Carte RP */
 body.pes .rpCard {
-  background: rgba(0, 0, 0, 0.6);
-  border-left: 8px solid #39ff14;
-  box-shadow: 0 0 20px #39ff14;
-  color: #ffffff;
+  background: rgba(0, 0, 128, 0.4);
+  border-left: 8px solid #c0c0c0;
+  box-shadow: 0 0 20px #c0c0c0;
+  color: #c0c0c0;
 }
 /* 🧑‍🎓 Header RP */
 body.pes .rpHeader {
@@ -498,28 +486,22 @@ body.pes .rpHeader {
 body.pes .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39ff14;
-}
-body.pes .rpGreekBadge {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #39ff14;
+  box-shadow: 0 0 10px #c0c0c0;
 }
 /* 🧱 Sections RP */
 body.pes .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(0, 0, 128, 0.4);
+  border-left: 6px solid #c0c0c0;
+  box-shadow: 0 0 10px #c0c0c0;
   padding: 1rem;
   border-radius: 6px;
 }
 body.pes .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #39ff14;
+  border-bottom: 2px solid #c0c0c0;
   padding-bottom: 0.3rem;
-  color: #39ff14;
+  color: #c0c0c0;
 }
 body.pes .rpSection ul {
   list-style: none;
@@ -530,12 +512,12 @@ body.pes .rpSection li {
 }
 /* 📔 Backstory */
 body.pes .rpStory {
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(0, 0, 128, 0.4);
+  border-left: 6px solid #c0c0c0;
+  box-shadow: 0 0 10px #c0c0c0;
   padding: 1rem;
   border-radius: 6px;
-  color: #ffffff;
+  color: #c0c0c0;
 }
 /* ✏️ Bouton édition */
 body.pes .rpActions button {
@@ -543,24 +525,24 @@ body.pes .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #39ff14;
+  background: #c0c0c0;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px #39ff14;
+  box-shadow: 0 0 10px #c0c0c0;
 }
 
 /* PKV */
 body.pkv {
   background: url('assets/img/pkvBg.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #39ff14;
+  color: #c0c0c0;
 }
 /* 🧾 Carte RP */
 body.pkv .rpCard {
-  background: rgba(0, 0, 0, 0.6);
-  border-left: 8px solid #39ff14;
-  box-shadow: 0 0 20px #39ff14;
-  color: #ffffff;
+  background: rgba(65, 105, 225, 0.2);
+  border-left: 8px solid #c0c0c0;
+  box-shadow: 0 0 20px #c0c0c0;
+  color: #c0c0c0;
 }
 /* 🧑‍🎓 Header RP */
 body.pkv .rpHeader {
@@ -570,28 +552,22 @@ body.pkv .rpHeader {
 body.pkv .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39ff14;
-}
-body.pkv .rpGreekBadge {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #39ff14;
+  box-shadow: 0 0 10px #c0c0c0;
 }
 /* 🧱 Sections RP */
 body.pkv .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(65, 105, 225, 0.4);
+  border-left: 6px solid #c0c0c0;
+  box-shadow: 0 0 10px #c0c0c0;
   padding: 1rem;
   border-radius: 6px;
 }
 body.pkv .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #39ff14;
+  border-bottom: 2px solid #c0c0c0;
   padding-bottom: 0.3rem;
-  color: #39ff14;
+  color: #c0c0c0;
 }
 body.pkv .rpSection ul {
   list-style: none;
@@ -602,12 +578,12 @@ body.pkv .rpSection li {
 }
 /* 📔 Backstory */
 body.pkv .rpStory {
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(65, 105, 225, 0.2);
+  border-left: 6px solid #c0c0c0;
+  box-shadow: 0 0 10px #c0c0c0;
   padding: 1rem;
   border-radius: 6px;
-  color: #ffffff;
+  color: #c0c0c0;
 }
 /* ✏️ Bouton édition */
 body.pkv .rpActions button {
@@ -615,23 +591,23 @@ body.pkv .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #39ff14;
+  background: #c0c0c0;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px #39ff14;
+  box-shadow: 0 0 10px #c0c0c0;
 }
 
 /* none */
 body.none {
   background: url('assets/img/fiche-bg.png') no-repeat center center fixed;
   background-size: cover;
-  color: #39ff14;
+  color: #ffffff;
 }
 /* 🧾 Carte RP */
 body.none .rpCard {
-  background: rgba(0, 0, 0, 0.6);
-  border-left: 8px solid #39ff14;
-  box-shadow: 0 0 20px #39ff14;
+  background: rgba(206, 70, 30, 0.2);
+  border-left: 8px solid #9b1e2;
+  box-shadow: 0 0 20px #9b1e2;
   color: #ffffff;
 }
 /* 🧑‍🎓 Header RP */
@@ -642,28 +618,22 @@ body.none .rpHeader {
 body.none .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #39ff14;
-}
-body.none .rpGreekBadge {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #39ff14;
+  box-shadow: 0 0 10px #9b1e2;
 }
 /* 🧱 Sections RP */
 body.none .rpSection {
   margin-bottom: 1.5rem;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(206, 70, 30, 0.4);
+  border-left: 6px solid #9b1e2;
+  box-shadow: 0 0 10px #9b1e2;
   padding: 1rem;
   border-radius: 6px;
 }
 body.none .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #39ff14;
+  border-bottom: 2px solid #9b1e2;
   padding-bottom: 0.3rem;
-  color: #39ff14;
+  color: #ffffff;
 }
 body.none .rpSection ul {
   list-style: none;
@@ -674,9 +644,9 @@ body.none .rpSection li {
 }
 /* 📔 Backstory */
 body.none .rpStory {
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 6px solid #39ff14;
-  box-shadow: 0 0 10px #39ff14;
+  background: rgba(206, 70, 30, 0.5);
+  border-left: 6px solid #9b1e2;
+  box-shadow: 0 0 10px #9b1e2;
   padding: 1rem;
   border-radius: 6px;
   color: #ffffff;
@@ -687,8 +657,8 @@ body.none .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #39ff14;
+  background: #9b1e2;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px #39ff14;
+  box-shadow: 0 0 10px #ffffff;
 }
