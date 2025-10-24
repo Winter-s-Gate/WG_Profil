@@ -198,10 +198,10 @@ body.abg #rpImage {
 }
 /* 🧾 Carte RP */
 body.abg .rpCard {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   border-left: 8px solid #39ff14;
   box-shadow: 0 0 20px #39ff14;
-  color: #ffffff;
+  color: #39ff14;
 }
 /* 🧑‍🎓 Header RP */
 body.abg .rpHeader {
@@ -212,10 +212,6 @@ body.abg .rpHeader img {
   width: 150px;
   border-radius: 50%;
   box-shadow: 0 0 10px #39ff14;
-}
-body.abg .rpHeader h2 {
-  color: #ffffff;
-  text-shadow: 0 0 10px #39ff14;
 }
 body.abg .rpGreekBadge {
   margin-top: 0.5rem;
@@ -232,7 +228,6 @@ body.abg .rpSection {
   padding: 1rem;
   border-radius: 6px;
 }
-
 body.abg .rpSection h3 {
   margin-bottom: 0.5rem;
   border-bottom: 2px solid #39ff14;
