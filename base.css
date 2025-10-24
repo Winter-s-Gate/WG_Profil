@@ -271,7 +271,7 @@ body.abg .rpActions button {
 body.acd {
   background: url('assets/img/acdBg.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #000000;
+  color: #ffff00;
 }
 body.acd #rpImage {
   border-color: #dfb9a7;
