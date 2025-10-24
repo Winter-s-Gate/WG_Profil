@@ -32,6 +32,7 @@ function fillForm(profile) {
     document.getElementById("weight").value = profile.weight || "";
     document.getElementById("major").value = profile.major || "";
     document.getElementById("greek").value = profile.greek || "";
+    document.getElementById("greekrole").value = profile.greekrole || "";
     document.getElementById("address").value = profile.address || "";
     document.getElementById("job").value = profile.job || "";
     document.getElementById("storyline").value = profile.storyline || "";
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             major: document.getElementById("major").value,
             activities: getCheckedValues("activitiesGroup"),
             greek: document.getElementById("greek").value,
+            greekrole: document.getElementById("greekrole").value,
             address: document.getElementById("address").value,
             job: document.getElementById("job").value,
             storyline: document.getElementById("storyline").value,

@@ -33,6 +33,7 @@ function fillProfile(profile) {
     document.getElementById("rpRole").textContent = profile.role || "";
     document.getElementById("rpMajor").textContent = profile.major || "";
     document.getElementById("rpGreek").textContent = profile["greek house"] || profile.greek || "";
+    document.getElementById("rpGreekrole").textContent = profile.greekrole || "";
     document.getElementById("rpActivities").textContent = profile.activities || "";
     document.getElementById("rpAddress").textContent = profile.address || "";
     document.getElementById("rpJob").textContent = profile.job || "";
