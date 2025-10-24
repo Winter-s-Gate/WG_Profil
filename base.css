@@ -599,15 +599,15 @@ body.pkv .rpActions button {
 
 /* none */
 body.none {
-  background: url('assets/img/fiche-bg.png') no-repeat center center fixed;
+  background-color: #ffffff;
   background-size: cover;
   color: #ffffff;
 }
 /* 🧾 Carte RP */
 body.none .rpCard {
   background: rgba(206, 70, 30, 0.2);
-  border-left: 8px solid #9b1e2;
-  box-shadow: 0 0 20px #9b1e2;
+  border-left: 8px solid #9b1e21;
+  box-shadow: 0 0 20px #9b1e21;
   color: #ffffff;
 }
 /* 🧑‍🎓 Header RP */
@@ -618,20 +618,20 @@ body.none .rpHeader {
 body.none .rpHeader img {
   width: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 10px #9b1e2;
+  box-shadow: 0 0 10px #9b1e21;
 }
 /* 🧱 Sections RP */
 body.none .rpSection {
   margin-bottom: 1.5rem;
   background: rgba(206, 70, 30, 0.4);
-  border-left: 6px solid #9b1e2;
-  box-shadow: 0 0 10px #9b1e2;
+  border-left: 6px solid #9b1e21;
+  box-shadow: 0 0 10px #9b1e21;
   padding: 1rem;
   border-radius: 6px;
 }
 body.none .rpSection h3 {
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #9b1e2;
+  border-bottom: 2px solid #9b1e21;
   padding-bottom: 0.3rem;
   color: #ffffff;
 }
@@ -645,8 +645,8 @@ body.none .rpSection li {
 /* 📔 Backstory */
 body.none .rpStory {
   background: rgba(206, 70, 30, 0.5);
-  border-left: 6px solid #9b1e2;
-  box-shadow: 0 0 10px #9b1e2;
+  border-left: 6px solid #9b1e21;
+  box-shadow: 0 0 10px #9b1e21;
   padding: 1rem;
   border-radius: 6px;
   color: #ffffff;
@@ -657,7 +657,7 @@ body.none .rpActions button {
   font-size: 1.2rem;
   border: none;
   border-radius: 6px;
-  background: #9b1e2;
+  background: #9b1e21;
   color: black;
   cursor: pointer;
   box-shadow: 0 0 10px #ffffff;
