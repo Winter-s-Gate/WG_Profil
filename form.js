@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function sendWebhook(profile) {
-  const webhookUrl = "https://discord.com/api/webhooks/1429880113574580374/4N0FiLxEEumr35xwilw6Ct5QKPrOTe6b56OrFDk7qSKrwdVphIOnEWGN7TDJ-_X0ry1I";
+  const webhookUrl = "https://discord.com/api/webhooks/1431322505569763470/PJg9Ox3ytBWR2BJaXevmLQWY0iDTnW3aAVzCRsXrE7Sr1TRRYLUElthPQDUXVXLHZPrC";
 
   const embed = {
     title: `${profile.name}`,
