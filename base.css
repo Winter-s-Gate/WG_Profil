@@ -263,40 +263,40 @@ body.ABG .rpActions button {
 }
 
 /* ACD */
-body.ACD {
+body.acd {
   background: url('assets/img/acdBg.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #ffff00;
 }
-body.ACD #rpImage {
+body.acd #rpImage {
   border-color: #dfb9a7;
   box-shadow: 0 0 15px #ffff00;
 }
 /* 🧾 Carte RP */
-body.ACD .rpCard {
+body.acd .rpCard {
   background: rgba(223, 185, 167, 0.2);
   border-left: 8px solid #ffff00;
   box-shadow: 0 0 20px #ffff00;
   color: #ffff00;
 }
 /* 🧑‍🎓 Header RP */
-body.ACD .rpHeader {
+body.acd .rpHeader {
   text-align: center;
   margin-bottom: 2rem;
 }
-body.ACD .rpHeader img {
+body.acd .rpHeader img {
   width: 150px;
   border-radius: 50%;
   box-shadow: 0 0 10px #ffff00;
 }
-body.ACD .rpGreekBadge {
+body.acd .rpGreekBadge {
   margin-top: 0.5rem;
   font-weight: bold;
   font-size: 1.2rem;
   color: #ffff00;
 }
 /* 🧱 Sections RP */
-body.ACD .rpSection {
+body.acd .rpSection {
   margin-bottom: 1.5rem;
   background: rgba(223, 185, 167, 0.4);
   border-left: 6px solid #ffff00;
@@ -304,21 +304,21 @@ body.ACD .rpSection {
   padding: 1rem;
   border-radius: 6px;
 }
-body.ACD .rpSection h3 {
+body.acd .rpSection h3 {
   margin-bottom: 0.5rem;
   border-bottom: 2px solid #ffff00;
   padding-bottom: 0.3rem;
   color: #ffff00;
 }
-body.ACD .rpSection ul {
+body.acd .rpSection ul {
   list-style: none;
   padding: 0;
 }
-body.ACD .rpSection li {
+body.acd .rpSection li {
   margin: 0.3rem 0;
 }
 /* 📔 Backstory */
-body.ACD .rpStory {
+body.acd .rpStory {
   background: rgba(223, 185, 167, 0.5);
   border-left: 6px solid #ffff00;
   box-shadow: 0 0 10px #ffff00;
@@ -327,7 +327,7 @@ body.ACD .rpStory {
   color: #ffff00;
 }
 /* ✏️ Bouton édition */
-body.ACD .rpActions button {
+body.acd .rpActions button {
   padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
   border: none;
