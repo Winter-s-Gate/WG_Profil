@@ -100,13 +100,15 @@ body {
 }
 
 #rpImage {
-  width: 150px;
+  width: 256px;
   height: auto;
   border-radius: 50%; /* 👈 cercle parfait */
   border: 4px solid #fff; /* 👈 cadre blanc */
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5); /* 👈 ombre douce */
   margin-bottom: 1rem;
   object-fit: cover;
+  display: flex;
+  justify-content: center;
 }
 
 /* 🏛️ Menu Greek House */
@@ -292,7 +294,7 @@ body.acd .rpGreekBadge {
 body.acd .rpSection {
   margin-bottom: 1.5rem;
   background: rgba(0, 0, 0, 0.4);
-  border-left: 6px solid #39ff14;
+  border-left: 6px solid #c0c0c0;
   box-shadow: 0 0 10px #39ff14;
   padding: 1rem;
   border-radius: 6px;
