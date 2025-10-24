@@ -297,11 +297,19 @@ body.acd .rpHeader img {
   border-radius: 50%;
   box-shadow: 0 0 10px #ffff00;
 }
-body.acd .rpGreekBadge {
+/*body.acd .rpGreekBadge {
   margin-top: 0.5rem;
   font-weight: bold;
   font-size: 1.2rem;
   color: #ffff00;
+}*/
+body.acd .rpGreekBadge {
+  margin-top: 0.5rem;
+  background: rgba(223, 185, 167, 0.4);
+  border-left: 6px solid #ffff00;
+  box-shadow: 0 0 10px #ffff00;
+  padding: 1rem;
+  border-radius: 6px;
 }
 /* 🧱 Sections RP */
 body.acd .rpSection {
