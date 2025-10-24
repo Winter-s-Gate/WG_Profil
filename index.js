@@ -25,6 +25,14 @@ function fillProfile(profile) {
     const validImage = imageUrl.startsWith("http");
 
     document.body.classList.add(house);
+	// ✅ Ajout du logo Greek
+	const logoPath = `assets/img/${house}.png`;
+	const logoElement = document.getElementById("rpGreekLogo");
+	if (logoElement) {
+		logoElement.src = logoPath;
+		logoElement.alt = `Logo ${house.toUpperCase()}`;
+		logoElement.style.display = "inline-block";
+	}
     document.getElementById("rpName").textContent = profile.name || "";
     document.getElementById("rpGender").textContent = profile.gender || "";
     document.getElementById("rpDob").textContent = formatDate(profile.dob || "");
