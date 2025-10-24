@@ -213,6 +213,11 @@ body.abg .rpHeader img {
   border-radius: 50%;
   box-shadow: 0 0 10px #39ff14;
 }
+
+body.abg .rpHeader h2 {
+  color: #ffffff;
+  text-shadow: 0 0 10px #39ff14;
+}
 body.abg .rpGreekBadge {
   margin-top: 0.5rem;
   font-weight: bold;
@@ -228,12 +233,7 @@ body.abg .rpSection {
   padding: 1rem;
   border-radius: 6px;
 }
-body.abg .rpSection h2 {
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.3rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px #39ff14;
-}
+
 body.abg .rpSection h3 {
   margin-bottom: 0.5rem;
   border-bottom: 2px solid #39ff14;
