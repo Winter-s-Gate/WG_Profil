@@ -98,8 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)
             });
-			
-			sendWebhook(payload);
             window.location.href = "index.html?uuid=" + payload.uuid;
         } catch (err) {
             alert("Erreur lors de l'enregistrement.");
@@ -119,65 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-function sendWebhook(profile) {
-  const webhookUrl = "https://discord.com/api/webhooks/1431322505569763470/PJg9Ox3ytBWR2BJaXevmLQWY0iDTnW3aAVzCRsXrE7Sr1TRRYLUElthPQDUXVXLHZPrC";
-
-  const embed = {
-    title: `${profile.name}`,
-    color: 0xff0000,
-	
-    image: {
-		url: profile.image || "https://example.com/default.png"
-    },
-    fields: [
-      {
-        name: "💳 Identity",
-        value: `**Gender:** ${profile.gender || "?"}\n**DoB:** ${profile.dob || "?"}\n**Height:** ${profile.height || "?"}\n**Weight:** ${profile.weight || "?"}`,
-        inline: true
-      },
-      {
-        name: "🏛️ Greek House",
-        value: `${profile.greek || "None"}\n${profile.greekrole || ""}`,
-        inline: true
-      },
-      {
-        name: "🎭 Role",
-        value: profile.role || "—",
-        inline: true
-      },
-      {
-        name: "🎨 Activities",
-        value: profile.activities || "—",
-        inline: false
-      },
-      {
-        name: "🌎 City Life",
-        value: `**Address:** ${profile.address || "?"}\n**Job:** ${profile.job || "?"}`,
-        inline: true
-      },
-      {
-        name: "📔 Backstory",
-        value: profile.storyline?.slice(0, 1024) || "—",
-        inline: false
-      }
-    ],
-    timestamp: new Date().toISOString()
-  };
-	console.log("Webhook payload :", profile);
-	fetch(webhookUrl, {
-		method: "POST",
-		headers: { "Content-Type": "application/json" },
-		body: JSON.stringify({ embeds: [embed] })
-	})
-	.then(res => {
-		console.log("Webhook status:", res.status);
-		return res.text();
-	})
-	.then(text => {
-		console.log("Webhook response:", text);
-	})
-	.catch(err => {
-		console.error("Erreur webhook :", err);
-	});
-}
