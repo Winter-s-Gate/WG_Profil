@@ -144,7 +144,7 @@ function sendWebhook(profile) {
       {
         name: "🎭 Role",
         value: profile.role || "—",
-        inline: false
+        inline: true
       },
       {
         name: "🎨 Activities",
@@ -154,7 +154,7 @@ function sendWebhook(profile) {
       {
         name: "🌎 City Life",
         value: `**Address:** ${profile.address || "?"}\n**Job:** ${profile.job || "?"}`,
-        inline: false
+        inline: true
       },
       {
         name: "📔 Backstory",
