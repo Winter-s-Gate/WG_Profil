@@ -165,18 +165,19 @@ function sendWebhook(profile) {
     timestamp: new Date().toISOString()
   };
 	console.log("Webhook payload :", profile);
-  fetch(webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ embeds: [embed] })
-  })
-.then(res => {
-  console.log("Webhook status:", res.status);
-  return res.text();
-})
-.then(text => {
-  console.log("Webhook response:", text);
-})
-.catch(err => {
-  console.error("Erreur webhook :", err);
-});
+	fetch(webhookUrl, {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({ embeds: [embed] })
+	})
+	.then(res => {
+		console.log("Webhook status:", res.status);
+		return res.text();
+	})
+	.then(text => {
+		console.log("Webhook response:", text);
+	})
+	.catch(err => {
+		console.error("Erreur webhook :", err);
+	});
+}
